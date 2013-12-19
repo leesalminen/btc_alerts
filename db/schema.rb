@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20131219075341) do
   enable_extension "plpgsql"
 
   create_table "prices", force: true do |t|
-    t.decimal  "rate",                 precision: 10, scale: 2,                                 null: false
-    t.datetime "timestamp",                                     default: 'now()'
-    t.string   "source",    limit: 50,                                                          null: false
+    t.decimal  "rate",                  precision: 10, scale: 2, null: false
+    t.string   "source",     limit: 50,                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
