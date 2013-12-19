@@ -62,6 +62,9 @@
 	            </div><!-- /.nav-collapse -->
 	          </div>
 		<div class="container">
+			<% if flash[:error] %>
+				<div class="alert alert-dismissable alert-danger"><%= flash[:error] %></div>
+			<% end %>
 			<%= yield %>
 		</div>
 </body>
