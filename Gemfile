@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
+# rest
+gem 'httparty'
+
 group :production, :staging do
 	gem 'rails_12factor'
 end
