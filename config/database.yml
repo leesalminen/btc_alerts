@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: lee
+  database: btc_alerts
   pool: 5
-  #username: btc_alerts
+  username: btc_alerts
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
