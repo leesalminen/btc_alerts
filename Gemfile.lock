@@ -75,6 +75,9 @@ GEM
       rack
     omniauth-facebook (1.4.0)
       omniauth-oauth2 (~> 1.0.2)
+    omniauth-google-oauth2 (0.2.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2
     omniauth-oauth2 (1.0.3)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -146,6 +149,7 @@ DEPENDENCIES
   jquery-rails
   omniauth
   omniauth-facebook (= 1.4.0)
+  omniauth-google-oauth2
   pg
   rails (= 4.0.2)
   rails_12factor

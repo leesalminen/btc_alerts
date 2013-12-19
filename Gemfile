@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 # omniauth
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem "omniauth-google-oauth2"
 
 # rest
 gem 'httparty'
