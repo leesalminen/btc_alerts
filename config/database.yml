@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: btc_alerts_development
   pool: 5
-  username: btc_alerts
+  #username: btc_alerts
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
