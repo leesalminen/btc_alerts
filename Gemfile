@@ -27,6 +27,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# omniauth
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
 group :production, :staging do
 	gem 'rails_12factor'
 end
@@ -39,7 +43,7 @@ end
 ruby "2.0.0"
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
