@@ -14,11 +14,11 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	              </button>
-	              <a class="navbar-brand" href="#">BTC Alerts</a>
+	              <a class="navbar-brand" href="/">BTC Alerts</a>
 	            </div>
 	            <div class="navbar-collapse collapse navbar-inverse-collapse">
 	              <ul class="nav navbar-nav">
-	                <li class="active"><a href="#">Home</a></li>
+	                <li><a href="/">Home</a></li>
 	                <li class="dropdown">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
 	                  <ul class="dropdown-menu">
@@ -30,6 +30,8 @@
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Price History <b class="caret"></b></a>
 	                  <ul class="dropdown-menu">
 	                    <li><a href="/price/coinbase">Coinbase</a></li>
+	                    <li><a href="/price/mtgox">Mt. Gox</a></li>
+	                    <li><a href="/price/all">All Sources</a></li>
 	                  </ul>
 	                </li>
 	              </ul>
@@ -45,7 +47,7 @@
 	                  	<b class="caret"></b>
 	                  </a>
 	                  <ul class="dropdown-menu">
-	                    <li><a href="#">Manage Account</a></li>
+	                    <li><a href="/account">Manage Account</a></li>
 	                    <li class="divider"></li>
 	                    <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
 	                  </ul>

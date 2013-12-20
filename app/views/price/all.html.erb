@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="span12">
-		<h1>This is what we know about Coinbase</h1>
+		<h1>This is what we know about all sources</h1>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
 					<th>Rate</th>
 					<th>Timestamp</th>
+					<th>Source</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -15,6 +16,7 @@
 				      <td><%= price.id %></td>     
 				      <td><%= number_to_currency(price.rate) %></td>
 				      <td><%= price.created_at %></td>
+				      <td><%= price.source %></td>
 				   </tr>
 				<% end %>
 			</tbody>

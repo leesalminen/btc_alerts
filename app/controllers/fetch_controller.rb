@@ -7,14 +7,9 @@ class FetchController < ApplicationController
 
   	Price.create(:rate => coinbase_result['amount'], :source => 'coinbase')
 
-  end
+    mtgox_result = HTTParty.get('http://data.mtgox.com/api/2/BTCUSD/money/ticker_fast')
 
-  def coinbase
-
-  	#open API feed, read it, JSON decode it, and we want the amount
-	require 'httparty'
-
-  	@result = HTTParty.get('https://coinbase.com/api/v1/prices/buy')['amount']
+    Price.create(:rate => mtgox_result['data']['buy']['value'], :source => 'mtgox')
 
   end
 end
