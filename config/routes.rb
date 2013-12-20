@@ -11,8 +11,12 @@ BtcAlerts::Application.routes.draw do
   match 'price/coinbase', to: 'price#coinbase', via: [:get]
   match 'price/mtgox', to: 'price#mtgox', via: [:get]
   match 'price/all', to: 'price#all', via: [:get]
-  # fetch routes
+
+  # fetch routes (cron job)
   match 'fetch', to: 'fetch#index', via: [:get]
+
+  #account routes
+  match 'account', to: 'account#index', via [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
