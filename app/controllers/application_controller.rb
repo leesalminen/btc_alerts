@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    unless @current_user
+    user = User.find(session[:user_id]) if session[:user_id]
+    unless user
       redirect_to("/auth/failure", {:flash => { :error => "You must be logged in to see that page." }, :status => :moved_permanently})
     end
   end
