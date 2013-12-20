@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-      redirect_to("/auth/failure", {:flash => { :error => "You must be logged in to see that page." }, :status => :moved_permanently}) unless @current_user
+    unless @current_user
+      redirect_to("/auth/failure", {:flash => { :error => "You must be logged in to see that page." }, :status => :moved_permanently})
+    end
   end
 
 
