@@ -18,6 +18,9 @@ BtcAlerts::Application.routes.draw do
   #account routes
   match 'account', to: 'account#index', via: [:get]
 
+  #not sure if this is best practice to post to the same uri
+  match 'account', to: 'account#update', via: [:post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
