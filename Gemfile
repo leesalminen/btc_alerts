@@ -28,10 +28,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # omniauth
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-oauth2', '1.1'
+gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
-gem 'omniauth-github'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem "omniauth-coinbase"
+
+
 # rest
 gem 'httparty'
 
