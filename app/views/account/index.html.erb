@@ -1,11 +1,11 @@
 <div class="row">
-	<div class="span4">
+	<div class="col-lg-4">
 		<img src="//www.sylvain-lader.fr/wp-content/uploads/2012/07/placeholder.jpg" style="width:100px;height:100px;" />
 		<hr />
 		<h3><%= current_user.name %></h3>
 		<h3><%= current_user.id %></h3>
 	</div>
-	<div class="span8">
+	<div class="col-lg-8">
 		<h3>Update your Information</h3>
 		<%= form_tag(role: "form") do %>
 		  <div class="form-group">
