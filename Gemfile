@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'omniauth-oauth2', '1.1'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
-gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem "omniauth-coinbase"
 
 
