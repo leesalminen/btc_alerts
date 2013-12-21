@@ -1,39 +1,47 @@
 <div class="row">
 	<div class="col-lg-3">
-		<img src="//www.sylvain-lader.fr/wp-content/uploads/2012/07/placeholder.jpg" style="width:100px;height:100px;" />
-		<hr />
-		<h3><%= current_user.name %></h3>
-		<h3><%= current_user.id %></h3>
+		<% if current_user.provider == "facebook" %>
+	    	<img style="width:100px;height:100px;" src="//graph.facebook.com/<%= current_user.uid %>/picture" />
+	    <% else %>
+	    	<img src="//www.sylvain-lader.fr/wp-content/uploads/2012/07/placeholder.jpg" style="width:100px;height:100px;" />
+	    <% end %>
 	</div>
 	<div class="col-lg-9">
-		<%= form_tag(role: "form") do %>
-			<fieldset>
-				<legend>Update Your Information</legend>
-				<div class="form-group">
-					<%= label_tag(:name, "Name") %>
-					<div class="col-lg-10">
-						<%= f.text_field_tag(:name, current_user.name) %>
-					</div>
-				</div>
-				<div class="form-group">
-					<%= label_tag(:email, "Email") %>
-					<div class="col-lg-10">
-						<%= text_field_tag(:email, current_user.email) %>
-					</div>
-				</div>
-				<div class="form-group">
-					<%= label_tag(:newsletter, "Sign Up For Newsletter?") %>
-					<div class="col-lg-10">
-						<%= check_box_tag(:newsletter, current_user.newsletter) %>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-lg-10 col-lg-offset-2">
-						<button class="btn btn-default">Cancel</button> 
-						<button type="submit" class="btn btn-primary">Submit</button> 
-					</div>
-				</div>
-			</fieldset>
-		<% end %>
+    <% if @user.errors.any? %>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  	<%= form_tag( { :action => :update, }, { :method => :patch, :class => 'form' }) %>
+  		<fieldset>
+  			<legend>Update Your Information</legend>
+  			<div class="form-group">
+  				<div class="col-lg-10">
+  					<%= label_tag(:name, "Name") %>
+  					<%= text_field "user", "name", {"size" => 20, "value" => current_user.name} %>
+  				</div>
+  			</div>
+  			<div class="form-group">
+  				<div class="col-lg-10">
+  					<%= label_tag(:email, "Email") %>
+  					<%= text_field "user", "email", {"size" => 20, "value" => current_user.email} %>
+  				</div>
+  			</div>
+  			<div class="form-group">
+  				<div class="col-lg-10">
+  					<%= label_tag(:newsletter, "Sign Up For Newsletter?") %>
+  					<%= check_box "user", "newsletter", {"value" => current_user.newsletter} %>
+  				</div>
+  			</div>
+  			<div class="form-group">
+  				<div class="col-lg-10">
+  					<button class="btn btn-default">Cancel</button> 
+  					<button type="submit" class="btn btn-primary">Submit</button> 
+  				</div>
+  			</div>
+  		</fieldset>
+    </form>
 	</div>
 </div>
