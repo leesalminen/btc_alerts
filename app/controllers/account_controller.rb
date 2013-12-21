@@ -19,8 +19,11 @@ class AccountController < ApplicationController
 	end
   end
 
-  private
-  def update_attr
-      params.require(:name).permit(:email, :newsletter)
+  def destroy
+  	@user = User.find(current_user.id)
+  	@user.destroy!
+
+  	session[:user_id] = nil
+    redirect_to("/account", {:flash => { :success => "Your account has been deleted." }, :status => :moved_permanently})
   end
 end
