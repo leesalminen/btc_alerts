@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# highcharts
+gem "highcharts-rails", "~> 3.0.7"
+
 # omniauth
 gem 'omniauth-oauth2', '1.1'
 gem 'omniauth-facebook'
