@@ -1,7 +1,9 @@
 <div class="row">
 	<div class="col-lg-12">
 		<h1>This is what we know about all sources</h1>
-		<table class="table table-striped">
+		<div id="chart"></div>
+		<h3><a href="#data" onclick="show_table()" id="show">Show Data Table</a></h3>
+		<table class="table table-striped" id="data" style="display:none;">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -23,4 +25,39 @@
 		</table>
 	</div>
 </div>
-
+<script>
+$(document).ready(function() {
+    $('#chart').highcharts({
+        title: {
+            text: 'Coinbase Buy Rates'
+        },
+        subtitle: {
+            text: 'Source: Coinbase.com'
+        },
+        tooltip: {
+                valuePrefix: '$'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [
+	        {
+	            name: 'Coinbase',
+	            data: [<%= @data_price_coinbase %>]
+	        },
+	        {
+	        	name: 'Mt. Gox',
+	        	data: [<%= @data_price_mtgox %>]
+	        }
+	    ]
+    });
+});
+function show_table()
+{	
+	$("#data").slideDown();
+	$("#show").hide();
+}
+</script>
