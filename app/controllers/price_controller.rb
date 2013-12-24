@@ -21,7 +21,7 @@ class PriceController < ApplicationController
 	end
 
 	def all
-		@prices = Price.get_all()
+		@prices = Price.last(1000).reverse
 
 		@data_price_mtgox = []
     	@data_price_coinbase = []
