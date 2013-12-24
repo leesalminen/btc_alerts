@@ -32,6 +32,9 @@ $(document).ready(function() {
         subtitle: {
             text: 'Source: Coinbase.com'
         },
+        tooltip: {
+                valuePrefix: '$'
+        },
         series: [{
             name: 'Coinbase',
             data: [<%= @data_price %>]

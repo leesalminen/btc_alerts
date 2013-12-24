@@ -32,6 +32,9 @@ $(document).ready(function() {
 	    subtitle: {
 	        text: 'Source: MtGox.com'
 	    },
+	    tooltip: {
+                valuePrefix: '$'
+        },
 	    series: [{
 	        name: 'Mt. Gox',
 	        data: [<%= @data_price %>]

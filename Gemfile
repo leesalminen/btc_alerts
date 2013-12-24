@@ -28,7 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # highcharts
-gem "highcharts-rails", "~> 3.0.7"
+# gem "highcharts-rails", "~> 3.0.7"
 
 # omniauth
 gem 'omniauth-oauth2', '1.1'
